@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Океанолог — исследователь Мирового океана. Всё о профессии: связь с морской биологией, экспедиции, зарплаты в России, вузы и экзамены ЕГЭ.">
+  <title>Океанолог — исследователь Мирового океана | Всё о профессии</title>
+
+  <!-- Google Fonts: Unbounded (заголовки), Manrope (основной текст) и JetBrains Mono (цифры) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Стили проекта -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       ШАПКА САЙТА (HEADER)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="logo-link" aria-label="Океанолог — на главную">
+        <div class="logo-symbol">
+          <!-- Иконка волны/океана -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+            <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+            <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+          </svg>
+        </div>
+        <span class="logo-text">Океано<span>лог</span></span>
+      </a>
+
+      <!-- Основная навигация без номеров секторов -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#activities" class="nav-link">Чем занимается</a>
+        <a href="#workplaces" class="nav-link">Где работают</a>
+        <a href="#salaries" class="nav-link">Зарплата</a>
+        <a href="#education" class="nav-link">Где учат и ЕГЭ</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#quiz" class="header-cta-btn">
+          Пройти тест
+        </a>
+
+        <!-- Мобильное меню -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Открыть мобильное меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       ПЕРВЫЙ ЭКРАН (HERO) — ЧИСТАЯ ВОЗДУШНАЯ КОМПОЗИЦИЯ
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Плавный фоновый гидролокатор на Canvas -->
+    <canvas id="radarCanvas"></canvas>
+    <div class="hero-vignette"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="section-badge-dot"></span>
+        Профессия будущего • Морская биология и океанография
+      </div>
+
+      <h1 class="hero-title">
+        Океанолог — исследователь <span class="gold-accent">Мирового океана</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Учёный, который раскрывает тайны подводного мира: от микроскопического фитопланктона и хрупких коралловых рифов до глобальных океанических течений, формирующих климат всей планеты.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#activities" class="btn-primary">
+          <span>Изучить профессию</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="#quiz" class="btn-secondary">
+          <span>Пройти тест</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 4 аккуратные карточки с фактами об океане -->
+      <div class="hero-facts-grid">
+        <div class="fact-card">
+          <div class="fact-number">71%</div>
+          <div class="fact-label">поверхности Земли покрыто Мировым океаном</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-number">> 80%</div>
+          <div class="fact-label">глубин до сих пор не исследовано человеком</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-number">240 000+</div>
+          <div class="fact-label">описанных видов морских организмов</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-number">11 022 м</div>
+          <div class="fact-label">максимальная глубина (Бездна Челленджера)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ==========================================================================
+         РАЗДЕЛ 1: ЧЕМ ЗАНИМАЕТСЯ ОКЕАНОЛОГ (СЕТКА 3×2)
+         ========================================================================== -->
+    <section class="section-block" id="activities">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            Направления деятельности
+          </div>
+          <h2 class="section-title">Чем занимается океанолог</h2>
+          <p class="section-desc">
+            Океанология объединяет биологические исследования морских экосистем, экспедиции в открытом море, управление подводными роботами и лабораторный анализ данных.
+          </p>
+        </div>
+
+        <!-- Фильтр категорий -->
+        <div class="activities-filter-row">
+          <button class="filter-pill active" data-filter="all">Все направления</button>
+          <button class="filter-pill" data-filter="biology">Морская биология</button>
+          <button class="filter-pill" data-filter="expeditions">Экспедиции и флот</button>
+          <button class="filter-pill" data-filter="climate">Климат и лаборатория</button>
+        </div>
+
+        <!-- 6 карточек деятельности (Сетка 3×2) -->
+        <div class="activities-grid">
+          
+          <!-- Карточка 1 -->
+          <article class="activity-box ocean-card" data-category="biology">
+            <div class="activity-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                <circle cx="8" cy="13" r="1.5"></circle>
+                <circle cx="13" cy="15" r="1.5"></circle>
+              </svg>
+            </div>
+            <h3 class="activity-title">Изучение морской флоры и фауны</h3>
+            <p class="activity-text">
+              Исследование живых обитателей гидросферы: фитопланктона, хрупких коралловых рифов, глубоководных рыб и морских млекопитающих. Океанологи изучают биомассу, трофические цепи и сохранение редких гидробионтов.
+            </p>
+            <div class="activity-tags">
+              <span class="activity-tag">Коралловые рифы</span>
+              <span class="activity-tag">Фитопланктон</span>
+              <span class="activity-tag">Глубоководные рыбы</span>
+            </div>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="activity-box ocean-card" data-category="expeditions">
+            <div class="activity-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 21h20M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.26.59 4.38 1.62 6M12 10V2M12 2l5 4M12 2L7 6"></path>
+              </svg>
+            </div>
+            <h3 class="activity-title">Рейсы на научно-исследовательских судах</h3>
+            <p class="activity-text">
+              Месяцы работы на флагманах академического флота (НИС «Академик Мстислав Келдыш», «Академик Иоффе»). Круглосуточный сбор гидробиологических проб и океанографические разрезы в Арктике и Антарктике.
+            </p>
+            <div class="activity-tags">
+              <span class="activity-tag">НИС РАН</span>
+              <span class="activity-tag">Полярные рейсы</span>
+              <span class="activity-tag">Полевые вахты</span>
+            </div>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="activity-box ocean-card" data-category="expeditions">
+            <div class="activity-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 3v6M12 15v6M3 12h6M15 12h6"></path>
+              </svg>
+            </div>
+            <h3 class="activity-title">Работа с батискафами и подводными дронами</h3>
+            <p class="activity-text">
+              Управление телеуправляемыми необитаемыми подводными аппаратами (ТНПА) и автономными дронами. Исследование гидротермальных источников («чёрных курильщиков») и глубоководная видеосъёмка на шельфе.
+            </p>
+            <div class="activity-tags">
+              <span class="activity-tag">ТНПА и дроны</span>
+              <span class="activity-tag">Батискафы «Мир»</span>
+              <span class="activity-tag">Робототехника</span>
+            </div>
+          </article>
+
+          <!-- Карточка 4 -->
+          <article class="activity-box ocean-card" data-category="biology">
+            <div class="activity-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 3h6M10 9h4M10 3v13a4 4 0 0 0 8 0V3M6 21h12"></path>
+              </svg>
+            </div>
+            <h3 class="activity-title">Отбор проб воды и донных отложений</h3>
+            <p class="activity-text">
+              Взятие проб воды батометрическими кассетами «Розетта» на всех горизонтах глубин и поднятие геологических кернов донных осадков трубками большого диаметра. Анализ солёности, растворённых газов и минералов.
+            </p>
+            <div class="activity-tags">
+              <span class="activity-tag">Кассета «Розетта»</span>
+              <span class="activity-tag">Донные керны</span>
+              <span class="activity-tag">Гидрохимия</span>
+            </div>
+          </article>
+
+          <!-- Карточка 5 -->
+          <article class="activity-box ocean-card" data-category="climate">
+            <div class="activity-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                <path d="M12 13v8M8 17l4 4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="activity-title">Изучение течений и глобального климата</h3>
+            <p class="activity-text">
+              Мировой океан — главный аккумулятор тепла планеты. Океанологи рассчитывают динамику планетарных течений (Гольфстрим, Куросио), изучают теплообмен с атмосферой и строят прогностические модели климата.
+            </p>
+            <div class="activity-tags">
+              <span class="activity-tag">Океанические течения</span>
+              <span class="activity-tag">Модели климата</span>
+              <span class="activity-tag">Буи Argo</span>
+            </div>
+          </article>
+
+          <!-- Карточка 6 -->
+          <article class="activity-box ocean-card" data-category="climate">
+            <div class="activity-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path>
+                <polyline points="10 8 16 8 16 12 10 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="activity-title">Лабораторные исследования и генетика</h3>
+            <p class="activity-text">
+              Камеральная обработка материалов после экспедиций: микроскопия планктона, секвенирование ДНК редких глубоководных микроорганизмов, измерение следов микропластика и анализ данных на суперкомпьютерах.
+            </p>
+            <div class="activity-tags">
+              <span class="activity-tag">Секвенирование ДНК</span>
+              <span class="activity-tag">Микроскопия</span>
+              <span class="activity-tag">Обработка данных</span>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Аккуратная врезка о роли биологии -->
+        <div class="bio-focus-card">
+          <div class="bio-focus-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div class="bio-focus-content">
+            <h3>Ключевая роль биологии в океанологии</h3>
+            <p>
+              Биология составляет живую основу океанологии. Океан — крупнейшая биосфера нашей планеты, в которой обитает свыше 240 000 описанных видов живых существ. Именно морской фитопланктон в процессе фотосинтеза производит более 50% всего кислорода Земли, регулирует планетарный углеродный цикл и служит главным биоиндикатором экологического благополучия гидросферы.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         РАЗДЕЛ 2: ГДЕ РАБОТАЮТ ОКЕАНОЛОГИ (СИММЕТРИЧНАЯ СЕТКА 2×2)
+         ========================================================================== -->
+    <section class="section-block" id="workplaces">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            Трудоустройство и карьера
+          </div>
+          <h2 class="section-title">Где работают океанологи</h2>
+          <p class="section-desc">
+            Выпускники океанологических направлений востребованы в академических институтах РАН, государственных природоохранных службах, крупных океанариумах и на шельфовых проектах.
+          </p>
+        </div>
+
+        <!-- Симметричная сетка 2×2 (4 карточки без висячих элементов) -->
+        <div class="workplaces-grid-2x2">
+          
+          <!-- Карточка 1 -->
+          <article class="workplace-card ocean-card">
+            <div class="workplace-head">
+              <div class="workplace-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14"></path>
+                </svg>
+              </div>
+              <h3 class="workplace-title">Научно-исследовательские институты РАН</h3>
+            </div>
+            <p class="workplace-desc">
+              Флагманы фундаментальной науки, где организуются морские экспедиции, проводятся масштабные исследования гидрофизических полей и публикуются монографии мирового значения.
+            </p>
+            <div class="workplace-list-title">Ведущие институты России:</div>
+            <div class="workplace-items">
+              <div class="workplace-item">
+                <span><strong>Институт океанологии им. П. П. Ширшова РАН</strong> (Москва, Санкт-Петербург, Калининград, Геленджик)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Морской гидрофизический институт РАН</strong> (г. Севастополь)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Тихоокеанский океанологический институт ДВО РАН</strong> (г. Владивосток)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Полярный филиал ВНИРО — ПИНРО им. Н. М. Книповича</strong> (г. Мурманск)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 2 -->
+          <article class="workplace-card ocean-card">
+            <div class="workplace-head">
+              <div class="workplace-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                </svg>
+              </div>
+              <h3 class="workplace-title">Морские заповедники и океанариумы</h3>
+            </div>
+            <p class="workplace-desc">
+              Сохранение уникальных популяций морских млекопитающих, охрана эталонных акваторий, мониторинг гидробионтов и научно-просветительская деятельность.
+            </p>
+            <div class="workplace-list-title">Ключевые центры и резерваты:</div>
+            <div class="workplace-items">
+              <div class="workplace-item">
+                <span><strong>Дальневосточный морской биосферный заповедник</strong> (залив Петра Великого)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Кроноцкий и Командорский биосферные заповедники</strong> (Камчатка)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Приморский океанариум — филиал ННЦМБ ДВО РАН</strong> (остров Русский, Владивосток)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Центр океанографии и морской биологии «Москвариум»</strong> (г. Москва)</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 3 -->
+          <article class="workplace-card ocean-card">
+            <div class="workplace-head">
+              <div class="workplace-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h3 class="workplace-title">Гидрометеорологические службы (Росгидромет)</h3>
+            </div>
+            <p class="workplace-desc">
+              Непрерывный мониторинг состояния морей, контроль ледовой обстановки на трассе Северного морского пути, прогнозирование штормов и экологический надзор.
+            </p>
+            <div class="workplace-list-title">Службы и обсерватории:</div>
+            <div class="workplace-items">
+              <div class="workplace-item">
+                <span><strong>Федеральная служба по гидрометеорологии (Росгидромет)</strong></span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Арктический и антарктический НИИ (ААНИИ)</strong> (г. Санкт-Петербург)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Сеть островных и береговых морских станций</strong> по трассе Севморпути</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Центры государственного мониторинга загрязнения морских вод</strong></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Карточка 4 -->
+          <article class="workplace-card ocean-card">
+            <div class="workplace-head">
+              <div class="workplace-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="workplace-title">Шельфовые и экологические компании</h3>
+            </div>
+            <p class="workplace-desc">
+              Инженерно-экологические изыскания, батиметрическая съёмка и расчёт рисков перед установкой морских платформ, укладкой подводных трубопроводов и кабелей.
+            </p>
+            <div class="workplace-list-title">Корпорации и международные проекты:</div>
+            <div class="workplace-items">
+              <div class="workplace-item">
+                <span><strong>ООО «Газпром шельфпроект» и ПАО «Газпром»</strong></span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>ПАО «НОВАТЭК»</strong> (проекты «Ямал СПГ», «Арктик СПГ-2»)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>НК «Роснефть»</strong> (шельфовые арктические месторождения)</span>
+              </div>
+              <div class="workplace-item">
+                <span><strong>Программы Межправительственной океанографической комиссии (МОК / ЮНЕСКО)</strong></span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         РАЗДЕЛ 3: ЗАРАБОТНАЯ ПЛАТА (ИНТЕРАКТИВНЫЕ ТАБЫ)
+         ========================================================================== -->
+    <section class="section-block" id="salaries">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            Доходы и перспективы
+          </div>
+          <h2 class="section-title">Какова заработная плата океанолога</h2>
+          <p class="section-desc">
+            Оплата труда формируется из базового оклада, надбавок за морские рейсы, грантового финансирования научных фондов и региональных северных коэффициентов.
+          </p>
+        </div>
+
+        <!-- Переключатель уровней опыта -->
+        <div class="salary-switcher" role="tablist">
+          <button class="salary-tab-btn active" data-target="level1" role="tab" aria-selected="true">
+            Начинающий специалист
+          </button>
+          <button class="salary-tab-btn" data-target="level2" role="tab" aria-selected="false">
+            Опытный учёный (морские рейсы)
+          </button>
+          <button class="salary-tab-btn" data-target="level3" role="tab" aria-selected="false">
+            Специалист в коммерческом секторе
+          </button>
+        </div>
+
+        <!-- Панель 1: Начинающий специалист -->
+        <div class="salary-card-panel ocean-card active" id="level1" role="tabpanel">
+          <div class="salary-panel-header">
+            <div>
+              <h3 class="salary-rank-title">Инженер-лаборант / Младший научный сотрудник</h3>
+              <div class="salary-rank-subtitle">Старт карьеры после выпуска из университета • Опыт 0–3 года</div>
+            </div>
+            <div class="salary-sum-badge">
+              <div class="salary-sum-number">45 000 – 70 000 ₽</div>
+              <div class="salary-sum-period">базовый доход в месяц в НИИ и лабораториях</div>
+            </div>
+          </div>
+
+          <div class="salary-info-grid">
+            <div class="salary-col">
+              <h4>Обязанности на старте карьеры</h4>
+              <ul>
+                <li>Фиксация, консервация и маркировка гидробиологических проб</li>
+                <li>Калибровка зондов CTD, спектрофотометров и экспедиционных датчиков</li>
+                <li>Ведение журналов станций и первичная цифровая обработка наблюдений</li>
+                <li>Подготовка лабораторного оборудования к выходу судна в море</li>
+              </ul>
+            </div>
+            <div class="salary-col">
+              <h4>Где работают и перспективы</h4>
+              <ul>
+                <li>Институты РАН, университетские лаборатории, станции Росгидромета</li>
+                <li>Участие в грантах Российского научного фонда (РНФ) в качестве соисполнителя</li>
+                <li>Накопление морского ценза и публикации в рецензируемых изданиях (ВАК/Scopus)</li>
+                <li>Возможность поступления в академическую аспирантуру</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Панель 2: Опытный учёный -->
+        <div class="salary-card-panel ocean-card" id="level2" role="tabpanel">
+          <div class="salary-panel-header">
+            <div>
+              <h3 class="salary-rank-title">Научный сотрудник / Начальник экспедиционного отряда</h3>
+              <div class="salary-rank-subtitle">Степень кандидата наук • Опыт от 5 лет • Регулярные рейсы в море</div>
+            </div>
+            <div class="salary-sum-badge">
+              <div class="salary-sum-number" style="color: var(--accent-teal-light);">90 000 – 150 000 ₽</div>
+              <div class="salary-sum-period">в месяц (+ экспедиционные суточные и морские надбавки)</div>
+            </div>
+          </div>
+
+          <div class="salary-info-grid">
+            <div class="salary-col">
+              <h4>Профессиональные задачи</h4>
+              <ul>
+                <li>Руководство научными отрядами на исследовательских судах</li>
+                <li>Разработка программ мониторинга и составление комплексных научных отчётов</li>
+                <li>Руководство исследовательскими грантами РНФ и Минобрнауки РФ</li>
+                <li>Публикация монографий и рецензируемых статей в международных журналах</li>
+              </ul>
+            </div>
+            <div class="salary-col">
+              <h4>Финансовые бонусы и надбавки</h4>
+              <ul>
+                <li>Суточные выплаты во время нахождения в море (в рублях и валюте)</li>
+                <li>Надбавки за работу в сложных полярных широтах (Арктика, Антарктика)</li>
+                <li>Премии за высокие наукометрические показатели и внедрение методик</li>
+                <li>Оплата участия в международных океанографических конгрессах</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Панель 3: Шельф и коммерция -->
+        <div class="salary-card-panel ocean-card" id="level3" role="tabpanel">
+          <div class="salary-panel-header">
+            <div>
+              <h3 class="salary-rank-title">Ведущий эксперт / Главный специалист шельфовых проектов</h3>
+              <div class="salary-rank-subtitle">Коммерческий сектор • Нефтегазовый шельф и инженерные изыскания</div>
+            </div>
+            <div class="salary-sum-badge">
+              <div class="salary-sum-number" style="color: var(--accent-gold);">180 000 – 250 000+ ₽</div>
+              <div class="salary-sum-period">в месяц (вахтовый метод / контрактная основа)</div>
+            </div>
+          </div>
+
+          <div class="salary-info-grid">
+            <div class="salary-col">
+              <h4>Задачи на шельфе</h4>
+              <ul>
+                <li>Оценка воздействия на окружающую среду (ОВОС) перед началом бурения</li>
+                <li>Батиметрический и гидрологический аудит трасс подводных коммуникаций</li>
+                <li>Геотехнический надзор за состоянием морского дна у оснований платформ</li>
+                <li>Координация работ изыскательских флотилий и экологический контроль</li>
+              </ul>
+            </div>
+            <div class="salary-col">
+              <h4>Условия труда</h4>
+              <ul>
+                <li>Высокая конкурентная оплата в корпоративном секторе (Газпром, Новатэк)</li>
+                <li>Полное обеспечение проживания, трансфера, спецодежды и питания на вахте</li>
+                <li>Расширенный полис ДМС со стоматологией и страхованием жизни</li>
+                <li>Участие в масштабных инфраструктурных проектах национального значения</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Факторы дохода -->
+        <div class="salary-factors-box">
+          <div class="salary-factors-heading">От чего зависит итоговый доход океанолога:</div>
+          <div class="factors-grid">
+            <div class="factor-unit">
+              <div class="factor-name">Учёная степень</div>
+              <div class="factor-desc">Кандидаты и доктора наук имеют повышенные оклады и имеют право возглавлять гранты РНФ.</div>
+            </div>
+            <div class="factor-unit">
+              <div class="factor-name">Морские экспедиции</div>
+              <div class="factor-desc">Каждый день рейса в море оплачивается по повышенному коэффициенту плюс начисляются суточные.</div>
+            </div>
+            <div class="factor-unit">
+              <div class="factor-name">Регион работы</div>
+              <div class="factor-desc">Районные коэффициенты Крайнего Севера и Дальнего Востока увеличивают оклад на 30–80%.</div>
+            </div>
+            <div class="factor-unit">
+              <div class="factor-name">Сфера занятости</div>
+              <div class="factor-desc">В коммерческих шельфовых изысканиях доход в 2–3 раза превышает базовый оклад в академическом НИИ.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         РАЗДЕЛ 4: ГДЕ УЧАТ И ЧТО СДАВАТЬ (ЕГЭ И ВУЗЫ)
+         ========================================================================== -->
+    <section class="section-block" id="education">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            Образование и поступление
+          </div>
+          <h2 class="section-title">Где учат на океанолога и что сдавать</h2>
+          <p class="section-desc">
+            Океанология — университетская специальность. Для поступления на направления, связанные с биологией океана и экологией, профильным предметом выступает биология.
+          </p>
+        </div>
+
+        <!-- Баннер ЕГЭ с акцентом на БИОЛОГИЮ -->
+        <div class="ege-info-banner">
+          <span class="ege-tag">Правила приёма в вузы России</span>
+          <h3 class="ege-banner-title">Какие экзамены ЕГЭ необходимо сдавать?</h3>
+          <p class="ege-banner-text">
+            Для зачисления на специальности <strong>«Морская биология»</strong>, <strong>«Биоокеанология»</strong> и <strong>«Экология гидросферы»</strong> ключевым и обязательным предметом является <strong>Биология</strong>. В зависимости от университета набор вступительных испытаний включает:
+          </p>
+
+          <div class="ege-subjects-grid">
+            <div class="ege-card key-subject">
+              <div class="ege-subject-title">Биология</div>
+              <div class="ege-subject-status">Главный профильный предмет</div>
+              <div class="ege-subject-details">Обязательна для направлений биоокеанологии и экологии. Проверяет знания гидробиологии, ботаники, зоологии и законов экосистем.</div>
+            </div>
+
+            <div class="ege-card">
+              <div class="ege-subject-title">Русский язык</div>
+              <div class="ege-subject-status">Обязательный предмет</div>
+              <div class="ege-subject-details">Необходим для зачисления на любые направления во всех высших учебных заведениях Российской Федерации.</div>
+            </div>
+
+            <div class="ege-card">
+              <div class="ege-subject-title">География</div>
+              <div class="ege-subject-status">Профильный по выбору вуза</div>
+              <div class="ege-subject-details">Требуется на географических факультетах (МГУ, СПбГУ, РГГМУ) для специальности «Гидрометеорология».</div>
+            </div>
+
+            <div class="ege-card">
+              <div class="ege-subject-title">Математика / Химия</div>
+              <div class="ege-subject-status">По выбору вуза</div>
+              <div class="ege-subject-details">Профильная математика нужна для физической океанологии, химия часто выступает альтернативой на биофаках.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Коды направлений подготовки -->
+        <div class="programs-strip">
+          <div class="program-box">
+            <div class="program-code">06.03.01</div>
+            <h4 class="program-name">Биология</h4>
+            <div class="program-desc">Профиль «Морская биология и гидробиология». Изучение живых сообществ морей, планктона, бентоса и ихтиофауны.</div>
+          </div>
+
+          <div class="program-box">
+            <div class="program-code">05.03.04</div>
+            <h4 class="program-name">Гидрометеорология</h4>
+            <div class="program-desc">Профиль «Океанология». Физические поля океана, течения, взаимодействие с атмосферой и морские прогнозы.</div>
+          </div>
+
+          <div class="program-box">
+            <div class="program-code">05.03.06</div>
+            <h4 class="program-name">Экология и природопользование</h4>
+            <div class="program-desc">Профиль «Экология морских систем». Сохранение биоресурсов, контроль антропогенного загрязнения и экспертиза.</div>
+          </div>
+        </div>
+
+        <!-- Карточки ведущих вузов с аккуратными шильдиками аббревиатур -->
+        <div class="universities-grid">
+          
+          <!-- Вуз 1: МГУ -->
+          <article class="university-card ocean-card">
+            <div class="uni-header-row">
+              <span class="uni-badge-plate">МГУ</span>
+              <span class="uni-city-tag">г. Москва</span>
+            </div>
+            <h3 class="uni-title">МГУ им. М. В. Ломоносова</h3>
+            <div class="uni-faculties-list">
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Биологический факультет</div>
+                <div class="faculty-desc">Кафедры гидробиологии, ихтиологии и зоологии беспозвоночных животных</div>
+              </div>
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Географический факультет</div>
+                <div class="faculty-desc">Кафедра океанологии</div>
+              </div>
+            </div>
+            <div class="uni-footer-note">
+              Собственная Беломорская биологическая станция им. Н. А. Перцова (ББС МГУ)
+            </div>
+          </article>
+
+          <!-- Вуз 2: РГГМУ -->
+          <article class="university-card ocean-card">
+            <div class="uni-header-row">
+              <span class="uni-badge-plate">РГГМУ</span>
+              <span class="uni-city-tag">г. Санкт-Петербург</span>
+            </div>
+            <h3 class="uni-title">РГГМУ (Гидромед)</h3>
+            <div class="uni-faculties-list">
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Океанологический факультет</div>
+                <div class="faculty-desc">Старейший профильный центр подготовки океанологов в России</div>
+              </div>
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Институт гидрологии и океанологии</div>
+                <div class="faculty-desc">Кафедра океанологии и морских прогнозов</div>
+              </div>
+            </div>
+            <div class="uni-footer-note">
+              Статус регионального учебного центра Всемирной метеорологической организации (ВМО)
+            </div>
+          </article>
+
+          <!-- Вуз 3: СПбГУ -->
+          <article class="university-card ocean-card">
+            <div class="uni-header-row">
+              <span class="uni-badge-plate">СПбГУ</span>
+              <span class="uni-city-tag">г. Санкт-Петербург</span>
+            </div>
+            <h3 class="uni-title">СПбГУ</h3>
+            <div class="uni-faculties-list">
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Институт наук о Земле</div>
+                <div class="faculty-desc">Кафедра океанологии</div>
+              </div>
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Биологический факультет</div>
+                <div class="faculty-desc">Кафедра прикладной экологии и гидробиологии</div>
+              </div>
+            </div>
+            <div class="uni-footer-note">
+              Прямое партнёрство с Арктическим и антарктическим НИИ (ААНИИ)
+            </div>
+          </article>
+
+          <!-- Вуз 4: ДВФУ -->
+          <article class="university-card ocean-card">
+            <div class="uni-header-row">
+              <span class="uni-badge-plate">ДВФУ</span>
+              <span class="uni-city-tag">г. Владивосток</span>
+            </div>
+            <h3 class="uni-title">ДВФУ</h3>
+            <div class="uni-faculties-list">
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Институт Мирового океана (ИМО)</div>
+                <div class="faculty-desc">Прямой доступ к Японскому, Охотскому и Берингову морям</div>
+              </div>
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Департамент морской биологии</div>
+                <div class="faculty-desc">Подготовка биоокеанологов для Азиатско-Тихоокеанского региона</div>
+              </div>
+            </div>
+            <div class="uni-footer-note">
+              Совместные базы с ДВО РАН и Приморским океанариумом на острове Русский
+            </div>
+          </article>
+
+          <!-- Вуз 5: БФУ им. И. Канта -->
+          <article class="university-card ocean-card">
+            <div class="uni-header-row">
+              <span class="uni-badge-plate">БФУ</span>
+              <span class="uni-city-tag">г. Калининград</span>
+            </div>
+            <h3 class="uni-title">БФУ им. И. Канта</h3>
+            <div class="uni-faculties-list">
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Институт живых систем</div>
+                <div class="faculty-desc">Морская биоэкология и биотехнологии Балтийского региона</div>
+              </div>
+              <div class="uni-faculty-item">
+                <div class="faculty-name">Высшая школа пространственного развития</div>
+                <div class="faculty-desc">Геоэкология океана и прибрежных зон</div>
+              </div>
+            </div>
+            <div class="uni-footer-note">
+              Партнёрство с Атлантическим отделением Института океанологии им. П. П. Ширшова РАН
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         РАЗДЕЛ 5: МИНИ-ТЕСТ «ПОДОЙДЁТ ЛИ ТЕБЕ ЭТА ПРОФЕССИЯ?»
+         ========================================================================== -->
+    <section class="section-block" id="quiz">
+      <div class="container">
+        
+        <div class="section-head">
+          <div class="section-badge">
+            <span class="section-badge-dot"></span>
+            Интерактивный тест
+          </div>
+          <h2 class="section-title">Подойдёт ли тебе профессия океанолога?</h2>
+          <p class="section-desc">
+            Пройди короткий тест из 4 вопросов и определи, какое направление исследований океана лучше всего соответствует твоим интересам и характеру.
+          </p>
+        </div>
+
+        <div class="quiz-wrapper">
+          <div class="quiz-card ocean-card">
+            
+            <!-- Окно вопроса -->
+            <div id="quizCardQuestion">
+              <div class="quiz-progress-bar">
+                <div class="quiz-progress-fill" id="quizProgressFill"></div>
+              </div>
+
+              <div class="quiz-meta-row">
+                <span id="quizStep">Вопрос 1 из 4</span>
+                <span>Выберите один вариант</span>
+              </div>
+
+              <h3 class="quiz-question-title" id="quizQuestionTitle">
+                <!-- Заголовок вопроса вставляется через JS -->
+              </h3>
+
+              <div class="quiz-options-list" id="quizOptionsList">
+                <!-- Варианты ответов генерируются через JS -->
+              </div>
+
+              <div class="quiz-footer-row">
+                <span style="font-size: 0.84rem; color: var(--text-muted);">
+                  Мгновенный персональный результат
+                </span>
+                <button type="button" class="quiz-next-btn" id="quizNextBtn" disabled>
+                  Следующий вопрос
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Окно вердикта -->
+            <div class="quiz-result-view" id="quizResultView">
+              <div class="result-icon-circle">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"></polygon>
+                </svg>
+              </div>
+
+              <div class="result-match-badge">
+                Совместимость с профессией: <span id="resultMatchPercentage">98%</span>
+              </div>
+
+              <h3 class="result-verdict-title" id="resultVerdictTitle">
+                <!-- Вердикт -->
+              </h3>
+
+              <p class="result-verdict-desc" id="resultVerdictDesc">
+                <!-- Описание -->
+              </p>
+
+              <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                <button type="button" class="btn-primary" id="quizRestartBtn">
+                  Пройти тест заново
+                </button>
+                <a href="#education" class="btn-secondary">
+                  Смотреть список вузов и ЕГЭ
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       ПОДВАЛ САЙТА (FOOTER)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        
+        <div class="footer-brand">
+          <a href="#hero" class="logo-link">
+            <div class="logo-symbol">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+              </svg>
+            </div>
+            <span class="logo-text">Океано<span>лог</span></span>
+          </a>
+          <p>
+            Информационно-образовательный проект о профессии исследователя Мирового океана, её неразрывной связи с морской биологией и защитой гидросферы Земли.
+          </p>
+        </div>
+
+        <blockquote class="footer-quote">
+          «Море, однажды очаровав человека, навсегда удерживает его в сетях своего чуда».
+          <cite>— Жак-Ив Кусто, легендарный океанограф и исследователь глубин</cite>
+        </blockquote>
+
+        <div class="footer-links-group">
+          <h4>Навигация</h4>
+          <nav class="footer-links-list">
+            <a href="#activities">Чем занимается</a>
+            <a href="#workplaces">Где работают</a>
+            <a href="#salaries">Заработная плата</a>
+            <a href="#education">Где учат и ЕГЭ</a>
+            <a href="#quiz">Мини-тест</a>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Кнопка «Наверх» -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Вернуться наверх страницы">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Скрипты -->
+  <script src="js/main.js"></script>
+</body>
+</html>
